@@ -51,11 +51,16 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'minitest-power_assert'
+gem 'rails-i18n'
 gem 'rubocop'
 gem 'rubocop-capybara'
 gem 'rubocop-rails', require: false
 gem 'sentry-rails'
 gem 'sentry-ruby'
+gem 'simple_form'
+gem 'slim'
+gem 'slim-rails'
+gem 'devise'
 gem 'slim_lint'
 
 group :development, :test do
@@ -75,6 +80,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem 'i18n-debug'
 end
 
 group :test do

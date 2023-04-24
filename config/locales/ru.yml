@@ -1,0 +1,6 @@
+ru:
+  home:
+    index:
+      sign_in: "Войти"
+      register: "Зарегистрироваться"
+      sign_out: "Выйти"

@@ -1,0 +1,4 @@
+= link_to t('.sign_in'), new_user_session_path
+br
+= link_to t('.register'), new_user_registration_path
+= button_to t('.sign_out'), destroy_user_session_path, method: :delete
