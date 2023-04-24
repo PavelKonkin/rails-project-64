@@ -23,5 +23,5 @@ test:
 production:
   adapter: postgresql
   <<: *default
-  url: 'postgresql://postgres:hmdyhcKhvEZyjVTECy0T@containers-us-west-52.railway.app:6900/railway' 
-  # <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+ 
