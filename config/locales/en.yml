@@ -36,4 +36,13 @@ en:
       sign_in: "Sign in"
       register: "Register"
       sign_out: "Sign out"
-  
+      community_blog_title: Community blog
+  layouts:
+    application:
+      community_blog_title: Community blog
+      home: Home
+      sign_in: "Sign in"
+      register: "Register"
+      sign_out: "Sign out"
+      year: Pavel Konkin, %{year}
+

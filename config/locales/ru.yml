@@ -4,3 +4,12 @@ ru:
       sign_in: "Войти"
       register: "Зарегистрироваться"
       sign_out: "Выйти"
+      community_blog_title: Коллективный блог
+  layouts:
+    application:
+      community_blog_title: Коллективный блог
+      home: Домой
+      sign_in: "Войти"
+      register: "Зарегистрироваться"
+      sign_out: "Выйти"
+      year: Павел Конкин, %{year}
