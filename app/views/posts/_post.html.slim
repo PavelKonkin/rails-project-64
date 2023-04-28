@@ -1,0 +1,11 @@
+.mx-5.my-5
+ = link_to t('.all_posts'), root_path
+ |  / 
+ = post.category.name
+ h1.my-5 
+  = post.title
+ h6.fw-normal.lh-base.text-break = post.body
+ .text-right.small.text-muted.mt-auto
+    span.me-2 Понравилось: 0 |
+    span.me-2  = "#{t('.published')} #{distance_of_time_in_words_to_now(post.created_at)} #{t('.ago')} |"
+    span = "#{t('.creator')}: #{post.creator}"

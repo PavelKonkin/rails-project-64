@@ -10,22 +10,23 @@ html
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   header
     nav.mx-5 class="navbar navbar-expand-md navbar-light fixed-top bg-light border-bottom" style='height: 60px'
-      div class='container-fluid justify-content-end' style='height: 60px'
-        div class='row'
-          div class='col'
+      .container-fluid.justify-content-end style='height: 60px'
+        .row
+          .col
               = link_to t('.home'), root_path, class: 'nav-link link-dark'
-          - unless user_signed_in?
-            div class='col'
-              = link_to t('.sign_in'), new_user_session_path, class: 'nav-link link-dark'
-            div class='col'
-              = link_to t('.register'), new_user_registration_path, class: 'nav-link link-dark'
-          - else
-            div class='col'
+          - if user_signed_in?
+            .col
               = current_user.email
-            div class='col'
+            .col-md-auto
+              = link_to t('.new_post'), new_post_path, class: 'nav-link link-dark'
+            .col
               = button_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link link-dark'
-      = notice
-      = alert
+          - else
+            .col
+              = link_to t('.sign_in'), new_user_session_path, class: 'nav-link link-dark'
+            .col
+              = link_to t('.register'), new_user_registration_path, class: 'nav-link link-dark'
+
   p.notice
     /= notice
   p.alert
@@ -34,7 +35,7 @@ html
     = yield
   
   footer class="footer mt-auto py-3 bg-light fixed-bottom"
-    div class="container"
+    .container
       span class="text-muted"
          = t('.year', year: Time.current.year)
 

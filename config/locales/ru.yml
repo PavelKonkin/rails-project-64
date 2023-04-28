@@ -9,7 +9,42 @@ ru:
     application:
       community_blog_title: Коллективный блог
       home: Домой
+      new_post: Новый пост
       sign_in: "Войти"
       register: "Зарегистрироваться"
       sign_out: "Выйти"
       year: Павел Конкин, %{year}
+  posts:
+    create:
+      created: Пост опубликован
+    destroy:
+      post_destroyed: "Пост удалён."
+    edit:
+      edit: Редактировать пост
+      show: Открыть пост
+      back: Все посты
+    index:
+      creator: Автор
+      published: Опубликован
+      ago: назад
+    new:
+      back: Назад
+      new_post: Новый пост
+    post:
+      creator: Автор
+      published: Опубликован
+      ago: назад
+    show:
+      delete: Удалить пост
+      edit: Редактировать пост
+      home: Все посты
+    update:
+      updated: Пост обновлен
+  attributes:
+    title: Заголовок
+    body: Текст
+    category: Категория
+  helpers:
+    submit:
+      create: Опубликовать
+      update: Сохранить изменения

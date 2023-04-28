@@ -41,8 +41,43 @@ en:
     application:
       community_blog_title: Community blog
       home: Home
+      new_post: New post
       sign_in: "Sign in"
       register: "Register"
       sign_out: "Sign out"
       year: Pavel Konkin, %{year}
+  posts:
+    create:
+      created: Post was successfully created
+    destroy:
+      post_destroyed: "Post was successfully destroyed."
+    edit:
+      edit: Edit post
+      show: Show post
+      back: All posts
+    index:
+      creator: Creator
+      published: Published
+      ago: ago
+    new:
+      back: Back
+      new_post: New post
+    post:
+      creator: Creator
+      published: Published
+      ago: ago
+    show:
+      delete: Delete post
+      edit: Edit post
+      home: Back to all posts
+    update:
+      updated: Post was successfully updated
+  attributes:
+    title: Title
+    body: Text
+    category: Category
+  helpers:
+    submit:
+      create: Publish
+      update: Update
 

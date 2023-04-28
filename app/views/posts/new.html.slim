@@ -1,0 +1,9 @@
+.ms-5.me-5
+  h1 = t('.new_post')
+
+  == render "form", post: @post
+
+  br
+
+  
+  = link_to t('.back'), root_path, class: "btn btn-secondary"
