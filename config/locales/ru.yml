@@ -1,4 +1,6 @@
 ru:
+  comments:
+    reply: ответить
   home:
     index:
       sign_in: "Войти"
@@ -15,6 +17,10 @@ ru:
       sign_out: "Выйти"
       year: Павел Конкин, %{year}
   posts:
+    comments:
+      create:
+        created: Комментарий опубликован
+        create_error: Минимальная длина комментария 5 символов
     create:
       created: Пост опубликован
     destroy:
@@ -31,6 +37,9 @@ ru:
       back: Назад
       new_post: Новый пост
     post:
+      delete: Удалить пост
+      edit: Редактировать пост
+      home: Все посты
       creator: Автор
       published: Опубликован
       ago: назад

@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  comments:
+    reply: reply
   home:
     index:
       hello: "Hello world"
@@ -47,6 +49,10 @@ en:
       sign_out: "Sign out"
       year: Pavel Konkin, %{year}
   posts:
+    comments:
+      create:
+        created: Comment was successfully published
+        create_error: Minimum comment length is 5 letters
     create:
       created: Post was successfully created
     destroy:
@@ -63,6 +69,9 @@ en:
       back: Back
       new_post: New post
     post:
+      delete: Delete post
+      edit: Edit post
+      home: Back to all posts
       creator: Creator
       published: Published
       ago: ago

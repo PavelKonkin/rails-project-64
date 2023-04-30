@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post_comment = @post.post_comments.build
+    @post_comments = @post.post_comments.arrange
   end
 
   # GET /posts/new
