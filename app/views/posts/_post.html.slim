@@ -7,7 +7,7 @@
  h6.fw-normal.lh-base.text-break = post.body
  .text-right.small.text-muted.mt-auto
     span.me-2 = "#{t('.published')} #{distance_of_time_in_words_to_now(post.created_at)} #{t('.ago')} |"
-    span = "#{t('.creator')}: #{post.creator}"
+    span = "#{t('.creator')}: #{post.author}"
     span.me-2.position-absolute.end-0.me-5
       ' #{@post_likes_count}
       - if current_user
@@ -22,7 +22,7 @@
         i.bi.bi-hand-thumbs-up.position-relative.end-0.me-5
 
  .container-fluid
-  - if user_signed_in? && (current_user.email == post.creator)
+  - if user_signed_in? && (current_user == post.creator)
     = link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary my-2 mx-2'
     = link_to t('.delete'), @post, data: { turbo_method: :delete }, class: 'btn btn-danger my-2 mx-2'
   = link_to t('.home'), root_path, class: 'btn btn-secondary my-2 mx-2'
