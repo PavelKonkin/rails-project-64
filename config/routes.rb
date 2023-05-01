@@ -3,7 +3,8 @@
 Rails.application.routes.draw do
   resources :posts, except: :index do
     scope module: :posts do
-      resources :comments, shallow: true
+      resources :comments, shallow: true, only: %i[new create]
+      resources :likes, only: %i[create destroy]
     end
   end
   devise_for :users

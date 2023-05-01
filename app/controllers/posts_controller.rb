@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def show
     @post_comment = @post.post_comments.build
     @post_comments = @post.post_comments.arrange
+    @post_likes_count = @post.post_likes.count
   end
 
   # GET /posts/new
