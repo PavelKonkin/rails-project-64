@@ -1,33 +1,33 @@
 .mx-5.my-5
  = link_to t('.all_posts'), root_path
- |  / 
+ |  /
  = post.category.name
- h1.my-5 
+ h1.my-5
   = post.title
  h6.fw-normal.lh-base.text-break = post.body
  .text-right.small.text-muted.mt-auto
-    span.me-2  = "#{t('.published')} #{distance_of_time_in_words_to_now(post.created_at)} #{t('.ago')} |"
+    span.me-2 = "#{t('.published')} #{distance_of_time_in_words_to_now(post.created_at)} #{t('.ago')} |"
     span = "#{t('.creator')}: #{post.creator}"
-    span.me-2.position-absolute.end-0.me-5 
+    span.me-2.position-absolute.end-0.me-5
       ' #{@post_likes_count}
       - if current_user
         - current_user_like = post.post_likes.find_by(user_id: current_user.id)
-        - if current_user_like 
-          = link_to post_like_path(post, current_user_like), data: { turbo_method: :delete } do 
+        - if current_user_like
+          = link_to post_like_path(post, current_user_like), data: { turbo_method: :delete } do
             i.bi.bi-hand-thumbs-up-fill.position-relative.end-0.me-5
         - else
-          = link_to post_likes_path(post), data: { turbo_method: :post } do 
+          = link_to post_likes_path(post), data: { turbo_method: :post } do
             i.bi.bi-hand-thumbs-up.position-relative.end-0.me-5
       - else
         i.bi.bi-hand-thumbs-up.position-relative.end-0.me-5
- 
+
  .container-fluid
   - if user_signed_in? && (current_user.email == post.creator)
     = link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary my-2 mx-2'
-    = link_to t('.delete'), @post, data: {turbo_method: :delete}, class: 'btn btn-danger my-2 mx-2'
+    = link_to t('.delete'), @post, data: { turbo_method: :delete }, class: 'btn btn-danger my-2 mx-2'
   = link_to t('.home'), root_path, class: 'btn btn-secondary my-2 mx-2'
 
  h4.fw-normal.lh-base.my-3 Комментарии
  - if user_signed_in?
-     = render 'posts/comments/form', locals: {parent: nil}
- = render 'posts/comments/comments', locals: {comments: @post_comments}
+     = render 'posts/comments/form', locals: { parent: nil }
+ = render 'posts/comments/comments', locals: { comments: @post_comments }

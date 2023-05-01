@@ -1,15 +1,15 @@
 doctype html
 html
   head
-    title 
-      = t('.community_blog_title') 
-    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    title
+      = t('.community_blog_title')
+    meta[name='viewport' content='width=device-width,initial-scale=1']
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag "application", "data-turbo-track": "reload"
-    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
   header
-    nav.mx-5 class="navbar navbar-expand-md navbar-light fixed-top bg-light border-bottom" style='height: 60px'
+    nav class='navbar navbar-expand-md navbar-light fixed-top bg-light border-bottom' style='height: 60px'
       .container-fluid.justify-content-end style='height: 60px'
         .row
           .col
@@ -30,12 +30,11 @@ html
   p.notice
     /= notice
   p.alert
-    /= alert    
+    /= alert
   body
     = yield
-  
-  footer class="footer mt-auto py-3 bg-light fixed-bottom"
-    .container
-      span class="text-muted"
-         = t('.year', year: Time.current.year)
 
+  footer class='footer mt-auto py-3 bg-light fixed-bottom'
+    .container
+      span class='text-muted'
+         = t('.year', year: Time.current.year)

@@ -1,17 +1,12 @@
-
-
-<div class="container my-4">
 - @posts.each do |post|
   /= render post
   .col-md-12
    .card.mb-3
     .card-body
-      h2.h5.card-title 
-        = link_to post.title, post, class: "link-dark text-decoration-none"
+      h2.h5.card-title
+        = link_to post.title, post, class: 'link-dark text-decoration-none'
       .card-text.mb-2 = "#{post.body.slice(0, 200)}..."
       .text-right.small.text-muted.mt-auto
         span.me-2 Понравилось:  #{post.post_likes.count} |
-        span.me-2  = "#{t('.published')} #{distance_of_time_in_words_to_now(post.created_at)} #{t('.ago')} |"
+        span.me-2 = "#{t('.published')} #{distance_of_time_in_words_to_now(post.created_at)} #{t('.ago')} |"
         span = "#{t('.creator')}: #{post.creator}"
-
-

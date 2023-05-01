@@ -51,6 +51,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'ancestry'
+gem 'devise'
 gem 'minitest-power_assert'
 gem 'rails-i18n'
 gem 'rubocop'
@@ -60,9 +61,8 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim'
-gem 'slim-rails'
-gem 'devise'
 gem 'slim_lint'
+gem 'slim-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
