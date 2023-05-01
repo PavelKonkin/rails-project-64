@@ -3,24 +3,29 @@
 one:
   content: <%= Faker::Lorem.paragraph_by_chars(number: 25, supplemental: false)%>
   post: one
+  user: one
   ancestry: /
 
 two:
   content: <%= Faker::Lorem.paragraph_by_chars(number: 25, supplemental: false)%>
   post: two
+  user: one
   ancestry: /
 
 with_comments:
   content: this is comment with comments
   post: one
+  user: one
   ancestry: /
 
 nested:
   content: commented comment
   post: one
+  user: one
   ancestry: <%= ActiveRecord::FixtureSet.identify(:with_comments) %>
 
 deep_nested:
   content: deep comment
   post: one
+  user: one
   ancestry: <%= [ActiveRecord::FixtureSet.identify(:with_comments), ActiveRecord::FixtureSet.identify(:nested)].join('/') %>
