@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class Posts::LikesController < ApplicationController
-  before_action :set_post
+  before_action :set_post, :authenticate_user!
 
   def create
-    @like = @post.likes.build(likes_params)
+    @like = @post.likes.build(user_id: current_user.id)
     @like.save
     redirect_to post_url @post
   end
@@ -19,9 +19,5 @@ class Posts::LikesController < ApplicationController
 
   def set_post
     @post = Post.find(params[:post_id])
-  end
-
-  def likes_params
-    params.permit(:post_id, :user_id)
   end
 end

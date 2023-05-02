@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
-
+  before_action :authenticate_user!
   # GET /posts/1 or /posts/1.json
   def show
     @post_comment = @post.comments.build
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: t('.created') }
@@ -64,6 +64,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :body, :category_id, :creator_id, :author)
+    params.require(:post).permit(:title, :body, :category_id)
   end
 end

@@ -3,7 +3,7 @@
      .card id="comment-#{comment.id}"
        .card-header
          => link_to '#', "#comment-#{comment.id}"
-         = comment.creator
+         = comment.user.email
          span.fs-6.text-muted =< l comment.created_at, format: :short
        .card-body
          = comment.content

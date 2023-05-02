@@ -9,4 +9,4 @@
       .text-right.small.text-muted.mt-auto
         span.me-2 Понравилось:  #{post.likes.count} |
         span.me-2 = "#{t('.published')} #{distance_of_time_in_words_to_now(post.created_at)} #{t('.ago')} |"
-        span = "#{t('.creator')}: #{post.author}"
+        span = "#{t('.creator')}: #{post.creator.email}"

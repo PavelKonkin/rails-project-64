@@ -3,13 +3,11 @@
 one:
   title: MyString is biiiiiig
   body: <%= Faker::Lorem.paragraph_by_chars(number: 2560, supplemental: false)%>
-  author: MyString
   category: one
   creator: one
 
 two:
   title: MyString is biiiiiig
   body: <%= Faker::Lorem.paragraph_by_chars(number: 2560, supplemental: false)%>
-  author: MyString
   category: two
   creator: two
