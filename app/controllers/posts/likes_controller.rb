@@ -4,14 +4,14 @@ class Posts::LikesController < ApplicationController
   before_action :set_post
 
   def create
-    @like = @post.post_likes.build(user_id: current_user.id)
+    @like = @post.post_likes.build(likes_params)
     @like.save
     redirect_to post_url @post
   end
 
   def destroy
     @like = PostLike.find(params[:id])
-    @like.destroy
+    @like.destroy if @like.user_id == current_user.id
     redirect_to post_url @post
   end
 
@@ -22,6 +22,6 @@ class Posts::LikesController < ApplicationController
   end
 
   def likes_params
-    params.require(:post_like).permit(:user_id)
+    params.permit(:post_id, :user_id)
   end
 end

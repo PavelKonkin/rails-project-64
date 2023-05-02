@@ -6,4 +6,4 @@
 ![GitHub Action Status](https://github.com/PavelKonkin/rails-project-64/actions/workflows/github_action.yml/badge.svg)
 
 ## Project deployed and available via link: 
-https://rails-project-64-prod-f40e.up.railway.app
+https://rails-project-64-prod.up.railway.app
