@@ -9,7 +9,9 @@
          = comment.content
        - if user_signed_in?
          .card-footer
-           = link_to t('comments.reply'), "#response_comment-#{comment.id}", 'role' => 'button', 'data-bs-toggle' => 'collapse', 'data-bs-target' => "#response_comment-#{comment.id}"
+           = link_to t('comments.reply'), "#response_comment-#{comment.id}", \
+                                          'role' => 'button', 'data-bs-toggle' => 'collapse', \
+                                          'data-bs-target' => "#response_comment-#{comment.id}"
            .ms-2.collapse id="response_comment-#{comment.id}"
              = render 'posts/comments/form', locals: { parent: comment.id }
      - if children.any?
