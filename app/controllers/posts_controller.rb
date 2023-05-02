@@ -5,9 +5,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
-    @post_comment = @post.post_comments.build
-    @post_comments = @post.post_comments.arrange
-    @post_likes_count = @post.post_likes.count
+    @post_comment = @post.comments.build
+    @post_comments = @post.comments.arrange
+    @post_likes_count = @post.likes.count
   end
 
   # GET /posts/new

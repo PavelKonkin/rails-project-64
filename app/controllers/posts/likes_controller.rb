@@ -4,7 +4,7 @@ class Posts::LikesController < ApplicationController
   before_action :set_post
 
   def create
-    @like = @post.post_likes.build(likes_params)
+    @like = @post.likes.build(likes_params)
     @like.save
     redirect_to post_url @post
   end

@@ -12,7 +12,7 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create like with valid attributes' do
     assert_difference('PostLike.count') do
-      post post_likes_path @post, params: { post_like: { post_id: @post.id, user_id: @user.id } }
+      post post_likes_path @post, params: { post_id: @post.id, user_id: @user.id }
     end
     assert_redirected_to post_url(@post)
   end

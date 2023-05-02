@@ -4,11 +4,11 @@ class Posts::CommentsController < ApplicationController
   before_action :set_post
 
   def new
-    @post_comment = @post.post_comments.build
+    @post_comment = @post.comments.build
   end
 
   def create
-    @post_comment = @post.post_comments.build(post_comment_params)
+    @post_comment = @post.comments.build(comment_params)
     respond_to do |format|
       if @post_comment.save
         format.html { redirect_to post_url(@post), notice: t('.created') }
@@ -24,7 +24,7 @@ class Posts::CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
   end
 
-  def post_comment_params
+  def comment_params
     params.require(:post_comment).permit(:post_id, :content, :parent_id, :creator, :user_id)
   end
 end
