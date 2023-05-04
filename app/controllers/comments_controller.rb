@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Posts::CommentsController < ApplicationController
+class CommentsController < ApplicationController
   before_action :set_post, :authenticate_user!
 
   def new
@@ -8,7 +8,8 @@ class Posts::CommentsController < ApplicationController
   end
 
   def create
-    @post_comment = @post.comments.build(comment_params.merge('user_id' => current_user.id))
+    @post_comment = @post.comments.build(comment_params)
+    @post_comment.user = current_user
     respond_to do |format|
       if @post_comment.save
         format.html { redirect_to post_url(@post), notice: t('.created') }
@@ -25,6 +26,6 @@ class Posts::CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:post_comment).permit(:post_id, :content, :parent_id, :user_id)
+    params.require(:post_comment).permit(:content, :parent_id)
   end
 end

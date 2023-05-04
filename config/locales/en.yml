@@ -32,6 +32,8 @@
 en:
   comments:
     reply: reply
+    created: Comment was successfully published
+    create_error: Comment length is between 5 and 200 letters
   home:
     index:
       hello: "Hello world"
@@ -62,6 +64,7 @@ en:
       show: Show post
       back: All posts
     index:
+      community_blog_title: Community blog
       creator: Creator
       published: Published
       ago: ago

@@ -11,9 +11,8 @@
     span.me-2.position-absolute.end-0.me-5
       ' #{@post_likes_count}
       - if current_user
-        - current_user_like = post.likes.find_by(user_id: current_user.id)
-        - if current_user_like
-          = link_to post_like_path(post, current_user_like), data: { turbo_method: :delete } do
+        - if @current_user_like
+          = link_to post_like_path(post, @current_user_like), data: { turbo_method: :delete } do
             i.bi.bi-hand-thumbs-up-fill.position-relative.end-0.me-5
         - else
           = link_to post_likes_path(post), data: { turbo_method: :post } do

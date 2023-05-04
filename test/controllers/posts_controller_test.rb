@@ -8,6 +8,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:one)
   end
 
+  test 'should get index' do
+    get root_url
+    assert_response :success
+  end
+
   test 'should get new' do
     get new_post_url
     assert_response :success

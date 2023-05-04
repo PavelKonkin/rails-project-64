@@ -1,6 +1,8 @@
 ru:
   comments:
     reply: ответить
+    created: Комментарий опубликован
+    create_error: Длина комментария от 5 до 200 символов
   home:
     index:
       sign_in: "Войти"
@@ -30,6 +32,7 @@ ru:
       show: Открыть пост
       back: Все посты
     index:
+      community_blog_title: Коллективный блог
       creator: Автор
       published: Опубликован
       ago: назад

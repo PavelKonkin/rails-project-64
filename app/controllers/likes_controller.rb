@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Posts::LikesController < ApplicationController
+class LikesController < ApplicationController
   before_action :set_post, :authenticate_user!
 
   def create
@@ -10,8 +10,10 @@ class Posts::LikesController < ApplicationController
   end
 
   def destroy
-    @like = PostLike.find(params[:id])
-    @like.destroy if @like.user_id == current_user.id
+    @like = @post.likes.find_by(user_id: current_user.id)
+    @like.destroy
+    # @like = PostLike.find(params[:id])
+    # @like.destroy if @like.user_id == current_user.id
     redirect_to post_url @post
   end
 
