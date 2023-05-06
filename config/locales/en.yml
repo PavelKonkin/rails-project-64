@@ -68,6 +68,7 @@ en:
       creator: Creator
       published: Published
       ago: ago
+      likes: 'Likes:'
     new:
       back: Back
       new_post: New post
@@ -78,6 +79,7 @@ en:
       creator: Creator
       published: Published
       ago: ago
+      comments: Comments
     show:
       delete: Delete post
       edit: Edit post

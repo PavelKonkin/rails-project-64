@@ -4,9 +4,11 @@
 ru:
   devise:
     confirmations:
+      title: "Подтверждение учетной записи"
       confirmed: "Ваша учётная запись успешно подтверждена."
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по подтверждению вашей учётной записи."
       send_paranoid_instructions: "Если ваш адрес email есть в нашей базе данных, то в течение нескольких минут вы получите письмо с инструкциями по подтверждению вашей учётной записи."
+      email: email
     failure:
       already_authenticated: "Вы уже вошли в систему."
       inactive: "Ваша учётная запись ещё не активирована."
@@ -51,6 +53,8 @@ ru:
         password: Пароль
         password_confirmation: Подтверждение пароля
         characters_minimum: "(минимум %{minimum_chars} символов)"
+        new-password: new-password
+        email: email
     sessions:
       signed_in: "Вход в систему выполнен."
       signed_out: "Выход из системы выполнен."
@@ -59,10 +63,14 @@ ru:
         log_in: Войти
         password: Пароль
         remember_me: Запомнить меня
+        email: email
+        current-password: current-password
     shared:
       links:
         log_in: Войти
         sign_up: Зарегистрироваться
+        sessions: sessions
+        registrations: registrations
     unlocks:
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."
       send_paranoid_instructions: "Если ваша учётная запись существует, то в течение нескольких минут вы получите письмо с инструкциями по её разблокировке."

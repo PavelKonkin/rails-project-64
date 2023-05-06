@@ -36,6 +36,7 @@ ru:
       creator: Автор
       published: Опубликован
       ago: назад
+      likes: 'Понравилось:'
     new:
       back: Назад
       new_post: Новый пост
@@ -46,6 +47,7 @@ ru:
       creator: Автор
       published: Опубликован
       ago: назад
+      comments: Комментарии
     show:
       delete: Удалить пост
       edit: Редактировать пост
