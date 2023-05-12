@@ -2,14 +2,14 @@
 
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
-  before_action :set_post, only: %i[show edit update destroy]
 
   def index
     @posts = Post.order(created_at: :desc)
   end
 
-  # GET /posts/1 or /posts/1.json
+  # GET /posts/1
   def show
+    @post = Post.find(params[:id])
     @post_comment = @post.comments.build
     @post_comments = @post.comments.arrange
     @post_likes_count = @post.likes.count
@@ -22,50 +22,42 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit; end
+  def edit
+    @post = Post.find(params[:id])
+  end
 
-  # POST /posts or /posts.json
+  # POST /posts
   def create
     @post = current_user.posts.build(post_params)
-    process_save_update(-> { @post.save }, '.created', :new, :created)
+    process_save_update(-> { @post.save }, '.created', :new)
   end
 
-  # PATCH/PUT /posts/1 or /posts/1.json
+  # PATCH/PUT /posts/1
   def update
-    process_save_update(-> { @post.update(post_params) }, '.updated', :edit, :ok)
+    @post = Post.find(params[:id])
+    process_save_update(-> { @post.update(post_params) }, '.updated', :edit)
   end
 
-  # DELETE /posts/1 or /posts/1.json
+  # DELETE /posts/1
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
 
-    respond_to do |format|
-      format.html { redirect_to root_url, notice: t('.post_destroyed') }
-      format.json { head :no_content }
-    end
+    redirect_to root_url, notice: t('.post_destroyed')
   end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_post
-    @post = Post.find(params[:id])
-  end
 
   # Only allow a list of trusted parameters through.
   def post_params
     params.require(:post).permit(:title, :body, :category_id)
   end
 
-  def process_save_update(method, success_notice, fail_action, success_status)
-    respond_to do |format|
-      if method.call
-        format.html { redirect_to post_url(@post), notice: t(success_notice) }
-        format.json { render :show, status: success_status, location: @post }
-      else
-        format.html { render fail_action, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+  def process_save_update(method, success_notice, fail_action)
+    if method.call
+      redirect_to post_url(@post), notice: t(success_notice)
+    else
+      render fail_action, status: :unprocessable_entity
     end
   end
 end
