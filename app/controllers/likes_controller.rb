@@ -4,8 +4,9 @@ class LikesController < ApplicationController
   before_action :set_post, :authenticate_user!
 
   def create
-    @like = @post.likes.build(user_id: current_user.id)
-    @like.save
+    @already_liked = @post.likes.exists?(user_id: current_user.id)
+    @like = @post.likes.build(user_id: current_user.id) unless @already_liked
+    @like&.save
     redirect_to post_url @post
   end
 

@@ -51,3 +51,6 @@ Style/IfUnlessModifier:
 
 Style/MultilineIfModifier:
   Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
